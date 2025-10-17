@@ -5,7 +5,7 @@ function App() {
   return (
     <Router>
       <div>
-        <h1>Nested Routes Example</h1>
+        <h1>Nested Routes </h1>
         <nav>
           <Link to="/dashboard">Go to Dashboard</Link>
         </nav>
