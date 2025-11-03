@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Career Assessments</title>
+  <link rel="stylesheet" href="po.css">
+</head>
+
+<body>
+  <div class="container">
+
+    <!-- ✅ HOME SCREEN -->
+    <section id="home" class="active">
+      <div class="logo"><div class="icon">🗺🌐</div></div>
+      <h1 class="title">Career <span>Design</span></h1>
+      <p class="subtitle">
+        Discover your strengths, explore your personality, and find the perfect career path tailored just for you.
+      </p>
+
+
+
+      <div class="card-container">
+        <div class="card"><div class="icon">💪</div><h3>Discover Strengths</h3>
+          <p>Take comprehensive assessments to uncover your unique strengths and interests.</p>
+        </div>
+        <div class="card"><div class="icon">📊</div><h3>Get Recommendations</h3>
+          <p>Receive personalized career suggestions based on your assessment results.</p>
+        </div>
+        <div class="card"><div class="icon">👩‍💼</div><h3>Explore Careers</h3>
+          <p>Browse detailed career information including skills, salary, and growth prospects.</p>
+        </div>
+      </div>
+
+      <a href="#" class="admin-login">Login Here</a>
+      <button class="start-btn" onclick="showForm()">Login</button>
+    </section>
+
+
+    
+    <!-- ✅ LOGIN SCREEN -->
+    <section id="form-section">
+      <div class="logo"><div class="icon">🌐</div></div>
+      <h1 class="title">Login</h1>
+
+      <div class="form-card">
+        <form id="loginForm">
+          <label>Email Address</label>
+          <input type="email" id="loginEmail" placeholder="Enter your email" required>
+
+          <label>Password</label>
+          <input type="password" id="loginPass" placeholder="Enter password" required>
+
+          <div class="form-buttons">
+            <button type="button" class="back-btn" onclick="showHome()">Back</button>
+            <button type="submit" class="get-started-btn">Login</button>
+          </div>
+
+          <div class="login-section">
+            <div class="or-divider">OR</div>
+            <p class="register-link">Don’t have an account?
+              <a href="#" onclick="showRegister()">Register</a></p>
+          </div>
+        </form>
+      </div>
+    </section>
+
+
+    <!-- ✅ REGISTER SCREEN -->
+    <section id="register-section">
+      <div class="logo"><div class="icon">🌐</div></div>
+      <h1 class="title">Register</h1>
+
+      <div class="form-card">
+        <form id="registerForm">
+          <label>Your Name</label>
+          <input type="text" id="regName" placeholder="Enter your full name" required>
+
+          <label>Email Address</label>
+          <input type="email" id="regEmail" placeholder="Enter your email" required>
+
+          <label>Password</label>
+          <input type="password" id="regPass" placeholder="Create a password" required>
+
+          <div class="form-buttons">
+            <button type="button" class="back-btn" onclick="showForm()">Back to Login</button>
+            <button type="submit" class="get-started-btn">Create Account</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+
+    <!-- ✅ DASHBOARD SCREEN -->
+    <section id="dashboard">
+      <nav class="navbar">
+        <div class="nav-left">
+          <div class="logo-mini">🌐</div>
+          <span class="brand">Career Compass</span>
+        </div>
+        <div class="nav-links">
+          <button class="nav-btn active" onclick="showDashboard()">Dashboard</button>
+          <button class="nav-btn" onclick="showExplore()">Explore Careers</button>
+          <button class="nav-btn" onclick="showResults()">Results</button>
+        </div>
+        <div class="nav-right">
+          <span id="userName"></span>
+          <div class="avatar" id="avatar">U</div>
+          <button class="logout-btn" onclick="logout()">Logout</button>
+        </div>
+      </nav>
+
+      <div class="dashboard-content">
+        <h2 id="welcomeText">Welcome!</h2>
+        <p class="subtitle">Continue your career discovery journey</p>
+
+        <div class="progress-card">
+          <h4>📈 Your Progress</h4>
+          <p>0 of 3 assessments completed</p>
+          <div class="progress-bar"><div class="progress"></div></div>
+        </div>
+
+        <div class="assessments-section">
+          <h3>Career Assessments</h3>
+          <div class="assessment">
+            <div><h4>❤ Career Interest Assessment</h4><p>Discover what careers match you</p><small>⏱ 10 min</small></div>
+            <button class="start-assessment">Start</button>
+          </div>
+
+          <div class="assessment">
+            <div><h4>🧩 Personality Profile</h4><p>Understand your work style</p><small>⏱ 15 min</small></div>
+            <button class="start-assessment">Start</button>
+          </div>
+
+          <div class="assessment">
+            <div><h4>⚡ Skills Evaluation</h4><p>Measure your existing abilities</p><small>⏱ 12 min</small></div>
+            <button class="start-assessment">Start</button>
+          </div>
+        </div>
+
+        <button class="feedback-btn" onclick="openFeedback()">Feedback</button>
+      </div>
+    </section>
+
+
+    <!-- EXPLORE CAREERS SCREEN -->
+    <section id="explore-careers">
+      <nav class="navbar">
+        <div class="nav-left"><div class="logo-mini">🌐</div><span class="brand">Career Compass</span></div>
+        <div class="nav-links">
+          <button class="nav-btn" onclick="showDashboard()">Dashboard</button>
+          <button class="nav-btn active" onclick="showExplore()">Explore Careers</button>
+          <button class="nav-btn" onclick="showResults()">Results</button>
+        </div>
+        <div class="nav-right"><span id="userName2"></span><div class="avatar" id="avatar2">U</div></div>
+      </nav>
+
+      <h2 class="page-title">Explore Career Paths</h2>
+      <p class="subtitle">Discover detailed information about careers.</p>
+
+      <div class="filters">
+        <input type="text" placeholder="Search careers…" class="search-input">
+        <select><option>All</option></select>
+        <select><option>All</option></select>
+        <select><option>All</option></select>
+      </div>
+
+      <div class="career-grid">
+        <div class="career-card">
+          <span class="tag tech">Technology</span><span class="rating">⭐ 4.2</span>
+          <h3>Software Developer</h3>
+          <p>Design, develop, and maintain software applications.</p>
+          <div><strong>Subscribe :</strong> 120 k<br><strong>Growth:</strong> Very High<br><strong>Demand:</strong> High</div>
+          <button class="learn-btn">Learn More →</button>
+        </div>
+
+        <div class="career-card">
+          <span class="tag design">Design</span><span class="rating">⭐ 4.1</span>
+          <h3>UX Designer</h3>
+          <p>Create intuitive digital product experiences.</p>
+          <div><strong>Subscribe :</strong>  100 k<br><strong>Growth:</strong> High<br><strong>Demand:</strong> High</div>
+          <button class="learn-btn">Learn More →</button>
+        </div>
+
+        <div class="career-card">
+          <span class="tag analytics">Analytics</span><span class="rating">⭐ 3.9</span>
+          <h3>Data Analyst</h3>
+          <p>Analyze complex data to support decisions.</p>
+          <div><strong>Subscribe :</strong> 95 k<br><strong>Growth:</strong> High<br><strong>Demand:</strong> Very High</div>
+          <button class="learn-btn">Learn More →</button>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ✅ RESULTS SCREEN -->
+    <section id="results">
+      <h2 class="page-title">Your Career Results</h2>
+      <p class="subtitle">Complete assessments to unlock personalized career matches!</p>
+      <button class="back-btn" onclick="showDashboard()">Back to Dashboard</button>
+    </section>
+
+  </div>
+
+<script>
+
+// ✅ SCREEN SWITCH FUNCTIONS
+function hideAll() {
+  document.querySelectorAll("section").forEach(sec => sec.classList.remove("active"));
+}
+function updateNav(activeText) {
+  document.querySelectorAll(".nav-btn").forEach(btn =>
+    btn.classList.toggle("active", btn.innerText.includes(activeText))
+  );
+}
+
+function showHome(){ hideAll(); document.getElementById("home").classList.add("active"); }
+function showForm(){ hideAll(); document.getElementById("form-section").classList.add("active"); }
+function showRegister(){ hideAll(); document.getElementById("register-section").classList.add("active"); }
+function showDashboard(){ hideAll(); updateNav("Dashboard"); document.getElementById("dashboard").classList.add("active"); }
+function showExplore(){ hideAll(); updateNav("Explore"); document.getElementById("explore-careers").classList.add("active"); }
+function showResults(){ hideAll(); updateNav("Results"); document.getElementById("results").classList.add("active"); }
+
+// ✅ LOGOUT
+function logout() {
+  localStorage.clear();
+  showHome();
+}
+
+// ✅ SAVE USER DISPLAY
+function loadUserInfo(name){
+  document.getElementById("userName").innerText = name;
+  document.getElementById("userName2").innerText = name;
+  document.getElementById("avatar").innerText = name.charAt(0).toUpperCase();
+  document.getElementById("avatar2").innerText = name.charAt(0).toUpperCase();
+  document.getElementById("welcomeText").innerText = `Welcome, ${name}!`;
+}
+
+// ✅ LOGIN FUNCTION
+document.getElementById("loginForm").addEventListener("submit", (e)=>{
+  e.preventDefault();
+  let email = document.getElementById("loginEmail").value.trim();
+  let password = document.getElementById("loginPass").value.trim();
+
+  if(email === "" || password === ""){
+    alert("Please enter valid login details");
+    return;
+  }
+
+  loadUserInfo(email.split("@")[0]);
+  showDashboard();
+});
+
+// ✅ REGISTER FUNCTION
+document.getElementById("registerForm").addEventListener("submit", (e)=>{
+  e.preventDefault();
+  let name = document.getElementById("regName").value.trim();
+  let email = document.getElementById("regEmail").value.trim();
+  let pass = document.getElementById("regPass").value.trim();
+
+  if(name === "" || email === "" || pass === ""){
+    alert("Please fill all fields!");
+    return;
+  }
+
+  alert("✅ Account Created Successfully!");
+  loadUserInfo(name);
+  showDashboard();
+});
+
+// ✅ Feedback Function
+function openFeedback(){
+  let user = document.getElementById("userName").innerText || "User";
+  let fb = prompt(`${user}, share your feedback below:`);
+
+  if(fb && fb.trim() !== ""){
+    alert("Thank you for your feedback! 😊");
+  }
+}
+
+</script>
+</body>
+</html>
